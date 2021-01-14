@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    box-sizing: border-box;
+    font-family: poppins;
+    background-color: black;
+}
+
+.team_box {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../assets/images/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.person {
+    flex: 1;
+    overflow: hidden;
+    margin: 1px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.6s ease-in-out;
+    border-radius: 10px;
+    border: 1px #000 dotted;
+}
+
+/* ---------Hover Effects ---------*/
+.person:hover {
+    flex: 3;
+    transform: scale(0.7);
+    border-radius: 70px 0 70px 0;
+    border: 5px #fff solid;
+    animation: hover_pulse_animates 5s linear infinite;
+}
+.person:hover .profile_pic img{
+    filter: grayscale(30%);
+    transform: translateX(-50%) rotate(0);
+}
+.person:hover .person_info {
+    border-radius: 70px 0 70px 0;
+    border: 5px #fff solid;
+}
+/*-------------------------------------- */
+.profile_pic img{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+    filter: grayscale(90%);
+    transition: all 0.3s ease-in-out;
+}
+
+
+.person_info {
+    padding: 20px 0;
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+.person_info h2 {
+    font-size: 30px;
+}
+.person_info p {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    color: #b8e994;
+}
+
+.social ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social ul li {
+    list-style: none;
+}
+.social ul li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #333333;
+    background: #b8e994;
+    line-height: 32px;
+    border-radius: 50%;
+    font-size: 22px;
+    margin: 0 5px;
+    transition: all 0.3s linear;
+}
+
+.social ul li a:hover {
+    color: #b8e994;
+    background: transparent;
+    border-radius: 10px 0 10px 0;
+    border: 1px solid #fff;
+    transform: scale(1.5) rotate(360deg);
+}
+
+/*---------Pulse Animation On Hover-------*/
+
+@keyframes hover_pulse_animates {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3), 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+    40% {
+        box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.0), 0 0 0 0 rgba(255, 255, 255, 0.0);
+    }
+    80% {
+        box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.0), 0 0 0 0 rgba(255, 255, 255, 0.0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3), 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+}
+
+/*-------------BG Animation -------*/
